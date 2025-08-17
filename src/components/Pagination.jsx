@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { BlogContext } from "../context/BlogContext";
 import { useLocation } from "react-router-dom";
 
-function Pagination(relatedpage = false) {
+function Pagination({ relatedpage = false }) {
   const [mode, setMode] = useState("Dark");
   const handletheme = () => {
     if (mode === "Dark") {
@@ -16,6 +16,7 @@ function Pagination(relatedpage = false) {
       setMode("Dark");
     }
   };
+
   let tag = null;
   let category = null;
 
@@ -40,30 +41,39 @@ function Pagination(relatedpage = false) {
     else handlepageChange(page - 1);
   };
 
-  return (
-    <nav className="navbar">
-      <div>
-        {page > 1 && relatedpage === false && (
-          <button className="act-btn" onClick={prev}>
-            Previous
+  if (relatedpage)
+    return (
+      <nav className="navbar">
+        <button className="act-btn theme" onClick={handletheme}>
+          {mode}
+        </button>
+      </nav>
+    );
+  else
+    return (
+      <nav className="navbar">
+        <div className="navbox">
+          {page > 1 && (
+            <button className="act-btn" onClick={prev}>
+              Previous
+            </button>
+          )}
+          {page < totalpage && (
+            <button className="act-btn" onClick={next}>
+              Next
+            </button>
+          )}
+
+          <button className="act-btn theme" onClick={handletheme}>
+            {mode}
           </button>
-        )}
-        {page < totalpage && relatedpage === false && (
-          <button className="act-btn" onClick={next}>
-            Next
-          </button>
-        )}
-      </div>
-      <button className="act-btn theme" onClick={handletheme}>
-        {mode}
-      </button>
-      {relatedpage === false && (
-        <p className="page-details">
-          Page {page} of {totalpage}
-        </p>
-      )}
-    </nav>
-  );
+
+          <p className="page-details">
+            Page {page} of {totalpage}
+          </p>
+        </div>
+      </nav>
+    );
 }
 
 export default Pagination;
