@@ -1,0 +1,207 @@
+
+*{margin: 0;padding: 0;}
+
+html{
+    scroll-behavior: smooth;
+}
+
+.navlink{
+    color: var(--textcolor);
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+}
+
+.active{
+    font-size: 2rem !important;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif !important;
+    color: rgb(6, 177, 135);
+}
+
+:root{
+    --textcolor : white;
+    --bgcolor : black;
+    --borderbottom : rgb(207, 202, 202);
+    --bordershadow : rgb(175, 169, 169);
+}
+
+@media(max-width: 850px){
+    .blogs{
+        padding: 15px;
+    }
+}
+
+.title{
+    padding: 20px 0px;
+    font-size: 2rem;
+    font-weight: 800;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 15px;
+    border-bottom: var(--borderbottom);
+    box-shadow: 0px 0px 12px var(--bordershadow);
+    border-bottom: 1px solid;
+}
+
+body{
+    color: var(--textcolor);
+    background: var(--bgcolor);
+}
+
+
+.blogs{
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    margin: 0px auto;
+    min-height: 85vh;
+}
+
+.heading2{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(232, 87, 8);
+}
+
+.heading{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.3rem;
+    font-weight: 800;
+    padding-bottom: 7px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.category{
+    color: rgb(52, 135, 251);
+    cursor: pointer;
+}
+
+.heading:hover, .category:hover{
+    text-decoration: underline;
+}
+
+.content, .author, .date, .tag{
+    padding-left: 0.6rem;
+    font-size: medium;
+    font-weight: 400;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.content{
+    margin: 15px 0px;
+}
+
+.tag{
+    display: flex;
+    flex-wrap: wrap;
+    text-decoration: underline;
+    color: rgb(52, 135, 251);
+}
+
+.post{
+    margin: 20px 0px;
+}
+
+.navbar{
+    position: sticky;
+    bottom: 0px;
+    margin-top: 30px;
+    padding: 20px 0px;
+    border-top: 1px solid var(--borderbottom);
+    box-shadow: 0px 0px 12px var(--bordershadow);
+    background: var(--bgcolor);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+.act-btn, .backbtn{
+    width: 85px;
+    text-align: center;
+    color: var(--textcolor);
+    font-size: 1rem;
+    padding: 5px 10px;
+    margin-right: 15px;
+    border: 1px solid var(--borderbottom);
+    background: transparent;
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.act-btn:hover, .backbtn:hover{
+    opacity: 1;
+}
+
+.no-route{
+    font-size: large;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fc4c17;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 800;
+    justify-self: center;
+    margin-top: 14%;
+}
+
+
+
+.backbtn{
+    margin: 25px 0px;
+    border-radius: 5px;
+}
+
+.page-details{
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.loader {
+    align-self: center;
+    position: relative;
+    top: 20vh;
+    width: 120px;
+    height: 140px;
+    background-image: radial-gradient(circle 30px, var(--textcolor) 100%, transparent 0),
+    radial-gradient(circle 5px, var(--textcolor) 100%, transparent 0),
+    radial-gradient(circle 5px, var(--textcolor) 100%, transparent 0),
+    linear-gradient(var(--textcolor) 20px, transparent 0);
+    background-position: center 127px , 94px 102px , 16px 18px, center 114px;
+    background-size: 60px 60px, 10px 10px , 10px 10px , 4px 14px;
+    background-repeat: no-repeat;
+    z-index: 10;
+    perspective: 500px;
+  }
+  .loader::before {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius:50%;
+    border: 3px solid var(--textcolor);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -55%) rotate(-45deg);
+    border-right-color: transparent;
+    box-sizing: border-box;
+}
+.loader::after {
+    content: '';
+    position: absolute;
+    height: 80px;
+    width: 80px;
+    transform: translate(-50%, -55%) rotate(-45deg) rotateY(0deg) ;
+    left: 50%;
+    top: 50%;
+    box-sizing: border-box;
+    border: 7px solid #FF3D00;
+    border-radius:50%;
+    animation: rotate 0.5s linear infinite;
+  }
+
+@keyframes rotate {
+  to{transform: translate(-50%, -55%) rotate(-45deg) rotateY(360deg)   }
+}
+    
+
