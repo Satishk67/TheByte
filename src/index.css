@@ -5,6 +5,20 @@ html{
     scroll-behavior: smooth;
 }
 
+@media(max-width: 440px){
+    .navbox{
+        width: 100% !important;
+    }
+    .act-btn{
+        font-size: 14px !important;
+        width: 64px !important;
+        padding: 4px !important;
+    }
+    .page-details{
+        font-size: medium !important;
+    }
+}
+
 .navlink{
     color: var(--textcolor);
     text-decoration: none;
@@ -121,7 +135,7 @@ body{
 }
 
 .navbox{
-    min-width: 850px;
+    min-width: 85%;
     display: flex;
     justify-content: space-evenly;
 }
