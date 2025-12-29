@@ -1,6 +1,7 @@
 import { NavLink, Route } from "react-router-dom";
 
 function Post({ details }) {
+  const categoryName = details.category.replaceAll(" ", "-");
   return (
     <div className="post">
       {/* topic >> by >> date >> content >> taglines */}
@@ -10,7 +11,7 @@ function Post({ details }) {
       <p className="author">
         By {details.author} on {"  "}
         <NavLink
-          to={`category/${details.category.replaceAll(" ", "-")}`}
+          to={`category/${categoryName}`}
           className="category navlink"
         >
           <b>{details.category}</b>
